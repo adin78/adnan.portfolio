@@ -201,7 +201,75 @@ body {
     border: 1px solid var(--glass-border);
 }
 
-/* Experience Section */ .timeline { max-width: 800px; margin: 0 auto; position: relative; } .timeline::after { content: ''; position: absolute; width: 2px; background: var(--glass-border); top: 0; bottom: 0; left: 50%; margin-left: -1px; } .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; } .timeline-item:nth-child(odd) { left: 0; } .timeline-item:nth-child(even) { left: 50%; } .timeline-content { padding: 20px 30px; background: var(--glass-bg); position: relative; border-radius: 6px; border: 1px solid var(--glass-border); } .timeline-date { position: absolute; top: 0; font-size: 0.9rem; color: var(--primary-color); font-weight: 600; } .timeline-item:nth-child(odd) .timeline-date { right: -100px; text-align: left; } .timeline-item:nth-child(even) .timeline-date { left: -100px; text-align: right; }
+/* Experience Section */
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--glass-border);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background: var(--glass-bg);
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+/* Smooth hover effect (premium look) */
+.timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.timeline-date {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+    right: -140px;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: -140px;
+    text-align: right;
+}
+
 
 /* Projects Section */
 .project-grid {
@@ -434,4 +502,5 @@ footer {
     }
 
 }
+
 
