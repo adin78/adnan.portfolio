@@ -226,12 +226,16 @@ body {
     width: 50%;
 }
 
-.timeline-item:nth-child(odd) {
-    left: 0;
+.timeline-item:nth-child(odd) .timeline-date {
+    right: -140px;
+    text-align: left;
 }
 
-.timeline-item:nth-child(even) {
-    left: 50%;
+.timeline-item:nth-child(even) .timeline-date {
+    left: -140px;
+    text-align: right;
+}
+
 }
 
 .timeline-content {
@@ -244,7 +248,14 @@ body {
 
 .timeline-date {
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
     font-size: 0.9rem;
     color: var(--primary-color);
     font-weight: 600;
@@ -489,4 +500,5 @@ footer {
         display: block;
         text-align: left !important;
     }
+
 }
