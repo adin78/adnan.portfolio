@@ -202,7 +202,6 @@ body {
 }
 
 /* Experience Section */
-
 .timeline {
     max-width: 800px;
     margin: 0 auto;
@@ -241,35 +240,25 @@ body {
     position: relative;
     border-radius: 6px;
     border: 1px solid var(--glass-border);
-    transition: all 0.3s ease;
-}
-
-/* Smooth hover effect (premium look) */
-.timeline-content:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .timeline-date {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
     font-size: 0.9rem;
     color: var(--primary-color);
     font-weight: 600;
-    white-space: nowrap;
 }
 
 .timeline-item:nth-child(odd) .timeline-date {
-    right: -140px;
+    right: -100px;
     text-align: left;
 }
 
 .timeline-item:nth-child(even) .timeline-date {
-    left: -140px;
+    left: -100px;
     text-align: right;
 }
-
 
 /* Projects Section */
 .project-grid {
@@ -500,7 +489,4 @@ footer {
         display: block;
         text-align: left !important;
     }
-
 }
-
-
