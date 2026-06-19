@@ -1,10 +1,50 @@
 const header=document.querySelector('[data-header]');
 const menuButton=document.querySelector('[data-menu-button]');
 const menu=document.querySelector('[data-menu]');
+const mobileMenuQuery=window.matchMedia('(max-width: 850px)');
 const syncHeader=()=>header?.classList.toggle('scrolled',window.scrollY>24);
+const cleanPath=()=>location.pathname.replace(/index\.html$/i,'')||'/';
+const closeMenu=()=>{
+  menu?.classList.remove('open');
+  menuButton?.classList.remove('active');
+  menuButton?.setAttribute('aria-expanded','false');
+  document.body.classList.remove('menu-open');
+};
+const setMenuState=open=>{
+  menu?.classList.toggle('open',open);
+  menuButton?.classList.toggle('active',open);
+  menuButton?.setAttribute('aria-expanded',String(open));
+  document.body.classList.toggle('menu-open',open);
+};
+
 syncHeader();window.addEventListener('scroll',syncHeader,{passive:true});
-menuButton?.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.classList.toggle('active',open);menuButton.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
-menu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton?.classList.remove('active');menuButton?.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));
+menuButton?.addEventListener('click',()=>setMenuState(!menu.classList.contains('open')));
+menu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu?.classList.contains('open')){closeMenu();menuButton?.focus();}});
+mobileMenuQuery.addEventListener?.('change',event=>{if(!event.matches)closeMenu();});
+
+// Keep section navigation smooth without adding #section or /index.html to the URL.
+// Delegation also covers blog links generated later from assets/content.js.
+document.addEventListener('click',event=>{
+  const link=event.target.closest('a[href^="#"]');
+  if(!link)return;
+  const id=link.getAttribute('href');
+  if(!id||id==='#')return;
+  const target=document.querySelector(id);
+  if(!target)return;
+  event.preventDefault();
+  closeMenu();
+  target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  history.replaceState(null,'',cleanPath()+location.search);
+});
+
+// Honor incoming section links, then clean legacy paths and hashes from the address bar.
+if(location.hash){
+  const incomingTarget=document.querySelector(location.hash);
+  if(incomingTarget) requestAnimationFrame(()=>{incomingTarget.scrollIntoView({block:'start'});history.replaceState(null,'',cleanPath()+location.search);});
+}else if(/index\.html$/i.test(location.pathname)){
+  history.replaceState(null,'',cleanPath()+location.search);
+}
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 
 // Create a second, hidden copy so the tools bar loops without a visible gap.
@@ -50,7 +90,7 @@ if(content){
   document.querySelectorAll('[data-response-time]').forEach(el=>el.textContent=content.contact.responseTime+'.');
 
   const select=document.querySelector('[data-consultation-select]');
-  if(select) select.insertAdjacentHTML('beforeend',content.consultationTypes.map(item=>`<option>${item.title}</option>`).join(''));
+  if(select&&select.options.length===1) select.insertAdjacentHTML('beforeend',content.consultationTypes.map(item=>`<option>${item.title}</option>`).join(''));
 
   const form=document.querySelector('[data-consultation-form]');
   form?.addEventListener('submit',event=>{
