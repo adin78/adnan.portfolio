@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ATS-friendly resume of Adnan Afzal, Mobile Growth and Performance Marketing Specialist.">
+  <title>Resume — Adnan Afzal | Mobile Growth Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/script.js"></script>
+</head>
+<body class="resume-page">
+  <header class="site-header scrolled" data-header><div class="shell nav-wrap"><a class="brand" href="index.html">ADN<span>.</span></a><nav class="site-nav"><a href="index.html">← Back to portfolio</a></nav></div></header>
+  <div class="resume-actions"><button class="button button-dark" type="button" onclick="window.print()">Print / Save PDF</button></div>
+  <main class="resume-sheet">
+    <section class="resume-top">
+      <div><h1>Adnan Afzal</h1><p>Mobile Growth &amp; Performance Marketing Specialist</p></div>
+      <div class="resume-contact"><a href="mailto:adinrajpoot@gmail.com">adinrajpoot@gmail.com</a><a href="https://www.linkedin.com/in/adnan-afzal-growth/">linkedin.com/in/adnan-afzal-growth</a><span>Pakistan · Open to global opportunities</span></div>
+    </section>
+    <div class="resume-body">
+      <aside>
+        <section class="resume-section"><h2>Core Competencies</h2><ul><li>Mobile user acquisition</li><li>App Store Optimization (ASO)</li><li>Performance marketing</li><li>Growth strategy</li><li>Monetization and live operations</li><li>Creative testing</li><li>Funnel and cohort analysis</li><li>Attribution and analytics</li><li>Campaign scaling and ROAS</li><li>Cross-functional leadership</li></ul></section>
+        <section class="resume-section"><h2>Platforms &amp; Tools</h2><p>Google Ads UAC, Meta Ads, TikTok Ads, Unity Ads, AdMob, Mintegral, ironSource, AppLovin MAX, AppsFlyer, Adjust, Firebase, GA4, Google Play Console, App Store Connect, Sensor Tower, and AppFollow.</p></section>
+        <section class="resume-section"><h2>Selected Results</h2><ul><li>Contributed to 200M+ mobile installs</li><li>Increased organic installs by up to 40%</li><li>Reduced cost per install by up to 20%</li><li>Improved ARPDAU by 28%</li><li>Improved retention by 15%</li><li>Recovered ROAS by 12% during scale</li></ul></section>
+      </aside>
+      <div>
+        <section class="resume-section"><h2>Professional Summary</h2><p>Mobile growth and performance marketing specialist with 5+ years of experience scaling mobile apps and games across global markets. Expertise spans user acquisition, App Store Optimization, monetization, creative testing, attribution, and full-funnel analytics. Builds connected growth systems that improve acquisition efficiency, store conversion, retention, and revenue while translating complex data into clear commercial decisions.</p></section>
+        <section class="resume-section"><h2>Professional Experience</h2>
+          <h3>Marketing Team Lead | Void Games</h3><p><strong>April 2022 — Present</strong></p><ul><li>Lead global user acquisition, ASO, monetization, and live-operations strategy for mobile game titles.</li><li>Integrated paid acquisition signals with store-page testing, increasing organic conversion by 35% and reducing CPI by 20%.</li><li>Designed monetization experiments across ad placements and in-app purchase tiers, improving ARPDAU by 28% and retention by 15%.</li><li>Coordinate campaign, creative, product, and analytics priorities to support sustainable revenue growth.</li></ul>
+          <h3>Product Growth Manager | JanBark Technologies</h3><p><strong>August 2021 — March 2022</strong></p><ul><li>Managed full-funnel growth across acquisition, activation, retention, and monetization for multiple mobile apps.</li><li>Audited and restructured campaigns across three scaling apps, recovering ROAS by 12% while stabilizing CPI.</li><li>Aligned UAC and ASO workflows, reducing CPI by 18% and increasing total installs by 25%.</li><li>Used cohort and store-performance analysis to prioritize budgets, markets, and creative testing.</li></ul>
+          <h3>ASO Growth Specialist | Khastech Solutions</h3><p><strong>September 2020 — July 2021</strong></p><ul><li>Owned keyword research, metadata strategy, creative A/B testing, and competitive analysis.</li><li>Increased organic installs by 40% and improved app-store performance across more than 10 markets.</li><li>Developed repeatable processes for icons, screenshots, copy, and localization experiments.</li></ul>
+          <h3>ASO Specialist | Mobi Pixels</h3><p><strong>March 2020 — August 2020</strong></p><ul><li>Built keyword foundations, competitor research, store listings, and KPI reporting for early-stage mobile apps.</li><li>Improved organic visibility by 25% through structured metadata and creative optimization.</li></ul>
+        </section>
+        <section class="resume-section"><h2>Professional Focus</h2><p>User acquisition strategy · App Store Optimization · Growth marketing · Mobile analytics · Monetization · Paid social · Google UAC · Creative strategy · ROAS optimization · Retention · Mobile gaming</p></section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
