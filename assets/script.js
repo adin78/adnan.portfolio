@@ -92,15 +92,41 @@ if(content){
   const select=document.querySelector('[data-consultation-select]');
   if(select&&select.options.length===1) select.insertAdjacentHTML('beforeend',content.consultationTypes.map(item=>`<option>${item.title}</option>`).join(''));
 
-  const form=document.querySelector('[data-consultation-form]');
-  form?.addEventListener('submit',event=>{
-    event.preventDefault();
-    if(!form.reportValidity())return;
-    const values=new FormData(form);
-    const subject=encodeURIComponent(`Consultation inquiry: ${values.get('type')}`);
-    const body=encodeURIComponent(`Hi Adnan,\n\nMy name is ${values.get('name')} (${values.get('email')}).\n\nConsultation: ${values.get('type')}\nApp / game: ${values.get('app')||'Not provided'}\n\nWhat I would like to solve:\n${values.get('message')}\n\nBest regards,\n${values.get('name')}`);
-    window.location.href=`mailto:${content.contact.email}?subject=${subject}&body=${body}`;
-  });
+const form=document.querySelector('[data-consultation-form]');
+
+form?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  if (!form.reportValidity()) return;
+
+  const values = new FormData(form);
+
+  try {
+
+    await emailjs.send(
+      "service_ki1x4mn",
+      "template_0zzmg48",
+      {
+        name: values.get('name'),
+        email: values.get('email'),
+        type: values.get('type'),
+        app: values.get('app') || 'Not provided',
+        message: values.get('message')
+      }
+    );
+
+    alert("Thank you! Your consultation request has been sent.");
+
+    form.reset();
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert("Unable to send message. Please try again.");
+
+  }
+});
 
   const faqList=document.querySelector('[data-faqs]');
   if(faqList) faqList.innerHTML=content.faqs.map((item,index)=>`
